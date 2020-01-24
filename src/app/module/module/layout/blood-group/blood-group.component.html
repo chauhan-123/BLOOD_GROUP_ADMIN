@@ -1,0 +1,19 @@
+<div class="set-layout">
+    <div class ="sidebar">
+        <div class="set-layout">
+         <h1>Blood Group</h1>
+        <label id="example-radio-group-label">Pick your blood group which you want to need?</label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          [(ngModel)]="bloodGroup">
+          <mat-radio-button class="example-radio-button" *ngFor="let blood of bloods" [value]="blood" (input)= sendBloodGroup($event)>
+            {{blood}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <div>Your favorite season is: {{bloodGroup}}</div>
+        </div>
+          
+    </div>
+    </div>
+    
