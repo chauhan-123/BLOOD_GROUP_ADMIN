@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LayoutService } from '../layout.service';
 
 @Component({
   selector: 'app-country',
@@ -9,9 +10,17 @@ export class CountryComponent implements OnInit {
   countryGroup: string;
   countries: string[] = ['Afghanistan', 'Barbados', 'Namibia' , 'Brazil', 'Cameroon' , 'Pakistan' , 
                        'Djibouti', 'Egypt' , 'South Africa' , 'Greece' ,'India' ];
-  constructor() { }
+  constructor( public layoutService:LayoutService) { }
 
   ngOnInit() {
+    this.getCountryList();
+  }
+
+  getCountryList(){
+    this.layoutService.getCountryList().subscribe(response=>{
+      console.log("res", response);
+    })
+
   }
   sendBloodGroup(event){
     console.log("blood group working" , event.target.value)

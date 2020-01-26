@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import { CountryComponent } from './module/module/layout/country/country.component';
 import { StateComponent } from './module/module/layout/state/state.component';
 import { CityComponent } from './module/module/layout/city/city.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { CityComponent } from './module/module/layout/city/city.component';
     MatListModule,
     MatRadioModule,
     MatTableModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   
  
   ],
