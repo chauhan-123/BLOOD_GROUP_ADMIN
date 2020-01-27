@@ -1,5 +1,19 @@
 <div class="set-layout">
     <div class ="sidebar">
+
+      <mat-form-field>
+        <mat-label>Favorite food</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let country of stateGroupList" [value]="country.stateName">
+            {{country.stateName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+
+
         <div class="set-layout">
          <h1>State Group</h1>
         <label id="example-radio-group-label">Choose your State?</label>
@@ -7,8 +21,8 @@
           aria-labelledby="example-radio-group-label"
           class="example-radio-group"
           [(ngModel)]="countryGroup">
-          <mat-radio-button class="example-radio-button" *ngFor="let country of countries" [value]="country" (input)= sendBloodGroup($event)>
-            {{country}}
+          <mat-radio-button class="example-radio-button" *ngFor="let country of stateGroupList" [value]="country.stateName" (input)= sendBloodGroup($event)>
+            {{country.stateName}}
           </mat-radio-button>
         </mat-radio-group>
         <div>Your favorite season is: {{countryGroup}}</div>

@@ -8,8 +8,8 @@ import { LayoutService } from '../layout.service';
 })
 export class CountryComponent implements OnInit {
   countryGroup: string;
-  countries: string[] = ['Afghanistan', 'Barbados', 'Namibia' , 'Brazil', 'Cameroon' , 'Pakistan' , 
-                       'Djibouti', 'Egypt' , 'South Africa' , 'Greece' ,'India' ];
+  countryGroupList: any;
+
   constructor( public layoutService:LayoutService) { }
 
   ngOnInit() {
@@ -18,7 +18,7 @@ export class CountryComponent implements OnInit {
 
   getCountryList(){
     this.layoutService.getCountryList().subscribe(response=>{
-      console.log("res", response);
+       this.countryGroupList = response['data'];
     })
 
   }

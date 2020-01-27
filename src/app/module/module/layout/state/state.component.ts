@@ -8,8 +8,8 @@ import { LayoutService } from '../layout.service';
 })
 export class StateComponent implements OnInit {
   countryGroup: string;
-  countries: string[] = ['Afghanistan', 'Barbados', 'Namibia' , 'Brazil', 'Cameroon' , 'Pakistan' , 
-                       'Djibouti', 'Egypt' , 'South Africa' , 'Greece' ,'India' ];
+  stateGroupList: any;
+
   constructor(public layoutService:LayoutService) { }
 
   ngOnInit() {
@@ -18,7 +18,7 @@ export class StateComponent implements OnInit {
 
   getStateList(){
    this.layoutService.getStateList().subscribe(Response=>{
-     console.log("res", Response);
+     this.stateGroupList = Response['data']
    })
   }
   sendBloodGroup(event){

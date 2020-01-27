@@ -13,6 +13,7 @@ import { CountryComponent } from './module/module/layout/country/country.compone
 import { StateComponent } from './module/module/layout/state/state.component';
 import { CityComponent } from './module/module/layout/city/city.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatRadioModule,
     MatTableModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
   
  
   ],

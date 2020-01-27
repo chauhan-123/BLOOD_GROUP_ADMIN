@@ -10,25 +10,24 @@ import { LayoutService } from '../layout.service';
   styleUrls: ['./blood-group.component.scss']
 })
 export class BloodGroupComponent  implements OnInit {
-  bloodGroup: string;
-  bloods: string[] = ['A+' , 'A-' , 'B+', 'B-', 'O+' , 'O-' , 'AB+' , 'AB-'  ];
+  bloodGroupDetails:any;
+  blood:any;
   constructor(public http:HttpClient , public layoutService:LayoutService) { 
 
   }
 
   ngOnInit() {
     this.bloodGroupList();
-    console.log(this.bloodGroup , 'blood group')
   }
 
 
   bloodGroupList(){
     this.layoutService.getBloodList().subscribe(
       response=>{
-        console.log(response , "response")
+   
+        this.bloodGroupDetails = response['data']
       }
     )
-    console.log("Hello working")
   }
 
   sendBloodGroup(event){
