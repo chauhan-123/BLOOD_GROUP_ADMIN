@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LayoutService } from '../layout.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-country',
@@ -9,10 +10,13 @@ import { LayoutService } from '../layout.service';
 export class CountryComponent implements OnInit {
   countryGroup: string;
   countryGroupList: any;
-
-  constructor( public layoutService:LayoutService) { }
+  finalResult = [];
+  result: any;
+  constructor( public layoutService:LayoutService, public router:Router , 
+    public route:ActivatedRoute) { }
 
   ngOnInit() {
+    this.result = this.route.snapshot.paramMap.get('result');
     this.getCountryList();
   }
 
@@ -22,7 +26,8 @@ export class CountryComponent implements OnInit {
     })
 
   }
-  sendBloodGroup(event){
-    console.log("blood group working" , event.target.value)
+  sendCountryData(event){
+    this.finalResult.push(event.target.innerText , this.result);
+    this.router.navigate(['state-group', {p1:this.finalResult[0] , p2:this.finalResult[1]}]);
   }
 }

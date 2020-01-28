@@ -21,4 +21,13 @@ export class LayoutService {
   getStateList(){
     return this.http.get(`${this.Url}state_Group`);
   }
+
+  getDistrictDetails(){
+    return this.http.get(`${this.Url}district_Group`);
+  }
+
+  getUserInformation(info){
+    console.log(info)
+    return this.http.post(`${this.Url}user_group` , info);
+  }
 }

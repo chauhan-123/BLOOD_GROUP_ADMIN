@@ -6,23 +6,25 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './module/module/layout/sidebar/sidebar.component';
 import { HeaderComponent } from './module/module/layout/header/header.component';
-import {MatIconModule , MatListModule ,MatTableModule , MatRadioModule} from '@angular/material';
-import { BloodGroupComponent } from './module/module/layout/blood-group/blood-group.component';
+import {MatIconModule , MatListModule , MatRadioModule, MatButtonModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import { CountryComponent } from './module/module/layout/country/country.component';
 import { StateComponent } from './module/module/layout/state/state.component';
-import { CityComponent } from './module/module/layout/city/city.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSelectModule} from '@angular/material/select';
+import { DistrictComponent } from './module/module/layout/district/district.component';
+import { UserComponent } from './module/module/layout/user/user.component';
+import { BloodGroupModule } from './module/module/layout/blood-group/blood-group.module';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    BloodGroupComponent,
     CountryComponent,
     StateComponent,
-    CityComponent
+    DistrictComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatTableModule,
     FormsModule,
     HttpClientModule,
-    MatSelectModule
+    MatSelectModule,
+    BloodGroupModule,
+    MatButtonModule
   
  
   ],
