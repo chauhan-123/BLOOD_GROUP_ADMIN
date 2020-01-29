@@ -40,13 +40,13 @@ this.finalResult.push(event.target.innerText , this.state , this.country , this.
 
   sendFinalData(){
     this.AllFinalData.push(this.finalResult);
-    console.log(this.AllFinalData[0])
-//     if(this.AllFinalData.district==''){
-// alert("please enter the all data!")
-//         }else{
-
+    if(this.AllFinalData[0][0] == undefined || this.AllFinalData[0][1] == undefined || 
+    this.AllFinalData[0][2] == undefined  || this.AllFinalData[0][3] == undefined){
+       alert("please enter the all data!")
+        }
+        else{
     this.router.navigate(['user-group', {district: this.AllFinalData[0][0] ,state:this.AllFinalData[0][1] , country:this.AllFinalData[0][2] , blood: this.AllFinalData[0][3]}]);
-  
+        }
   
 }
 }

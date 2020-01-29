@@ -12,11 +12,14 @@ export class CountryComponent implements OnInit {
   countryGroupList: any;
   finalResult = [];
   result: any;
+  blood:any;
   constructor( public layoutService:LayoutService, public router:Router , 
     public route:ActivatedRoute) { }
 
   ngOnInit() {
-    this.result = this.route.snapshot.paramMap.get('result');
+    this.result = this.route.params.subscribe(res=>{
+      this.blood = res.blood;
+    })
     this.getCountryList();
   }
 
@@ -27,7 +30,7 @@ export class CountryComponent implements OnInit {
 
   }
   sendCountryData(event){
-    this.finalResult.push(event.target.innerText , this.result);
+    this.finalResult.push(event.target.innerText , this.blood);
     this.router.navigate(['state-group', {p1:this.finalResult[0] , p2:this.finalResult[1]}]);
   }
 }

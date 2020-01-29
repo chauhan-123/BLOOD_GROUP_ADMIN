@@ -27,7 +27,13 @@ export class LayoutService {
   }
 
   getUserInformation(info){
-    console.log(info)
     return this.http.post(`${this.Url}user_group` , info);
+  }
+
+  sendEmail(info){
+    let data = {
+      info:info
+    }
+    return this.http.post(`${this.Url}email_data` , data);
   }
 }

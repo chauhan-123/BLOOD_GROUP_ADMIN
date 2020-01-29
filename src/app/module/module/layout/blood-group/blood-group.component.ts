@@ -35,6 +35,6 @@ export class BloodGroupComponent implements OnInit {
 
   sendBloodGroup(event) {
     this.finalResult.push(event.target.value);
-    this.router.navigate(['country-group' ,event.target.value]);
+    this.router.navigate(['country-group' ,{blood :event.target.value}]);
   }
 }

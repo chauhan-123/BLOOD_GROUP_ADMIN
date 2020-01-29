@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './module/module/layout/sidebar/sidebar.component';
 import { HeaderComponent } from './module/module/layout/header/header.component';
-import {MatIconModule , MatListModule , MatRadioModule, MatButtonModule} from '@angular/material';
+import {MatIconModule , MatListModule , MatRadioModule, MatButtonModule, MatDialogModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import { CountryComponent } from './module/module/layout/country/country.component';
 import { StateComponent } from './module/module/layout/state/state.component';
@@ -16,6 +16,7 @@ import { DistrictComponent } from './module/module/layout/district/district.comp
 import { UserComponent } from './module/module/layout/user/user.component';
 import { BloodGroupModule } from './module/module/layout/blood-group/blood-group.module';
 import {MatTableModule} from '@angular/material/table';
+import { ConfirmationComponent } from './module/module/layout/confirmation/confirmation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import {MatTableModule} from '@angular/material/table';
     StateComponent,
     DistrictComponent,
     UserComponent,
+    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,11 +40,14 @@ import {MatTableModule} from '@angular/material/table';
     HttpClientModule,
     MatSelectModule,
     BloodGroupModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   
  
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ConfirmationComponent],
+  bootstrap: [AppComponent],
+  entryComponents:[ConfirmationComponent],
+  
 })
 export class AppModule { }
