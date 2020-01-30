@@ -16,6 +16,7 @@ import { DistrictComponent } from './module/module/layout/district/district.comp
 import { UserComponent } from './module/module/layout/user/user.component';
 import { BloodGroupModule } from './module/module/layout/blood-group/blood-group.module';
 import {MatTableModule} from '@angular/material/table';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ConfirmationComponent } from './module/module/layout/confirmation/confirmation.component';
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ConfirmationComponent } from './module/module/layout/confirmation/confi
     MatSelectModule,
     BloodGroupModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   
  
   ],

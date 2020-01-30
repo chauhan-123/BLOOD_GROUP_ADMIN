@@ -40,8 +40,9 @@ this.finalResult.push(event.target.innerText , this.state , this.country , this.
 
   sendFinalData(){
     this.AllFinalData.push(this.finalResult);
-    if(this.AllFinalData[0][0] == undefined || this.AllFinalData[0][1] == undefined || 
-    this.AllFinalData[0][2] == undefined  || this.AllFinalData[0][3] == undefined){
+    console.log("=====>" , this.AllFinalData)
+    if(this.AllFinalData[0][0] == "undefined" || this.AllFinalData[0][1] == "undefined" || 
+    this.AllFinalData[0][2] == "undefined"  || this.AllFinalData[0][3] == "undefined"){
        alert("please enter the all data!")
         }
         else{

@@ -23,6 +23,9 @@ export class ConfirmationComponent implements OnInit {
   }
 
   sendEmail(data){
-    this.layoutService.sendEmail(data).subscribe();
+    this.layoutService.sendEmail(data).subscribe(res=>{
+      
+this.layoutService.openSnackBar('email send to the registered user' , true);
+    })
   }
 }
