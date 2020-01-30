@@ -29,7 +29,11 @@ AllFinalData = [];
   }
 
   getDistrictList(){
-    this.layoutService.getDistrictDetails().subscribe(response =>{
+    let data ={
+      state : this.state,
+      country : this.country
+    }
+    this.layoutService.getDistrictDetails(data).subscribe(response =>{
       this.districtDetails = response['data'];
     })
   }

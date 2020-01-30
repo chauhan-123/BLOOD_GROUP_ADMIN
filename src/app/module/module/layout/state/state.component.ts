@@ -26,7 +26,11 @@ finalResult =[];
   }
 
   getStateList(){
-   this.layoutService.getStateList().subscribe(Response=>{
+    let data ={
+      country: this.country
+    }
+   this.layoutService.getStateList(data).subscribe(Response=>{
+     console.log(Response)
      this.stateGroupList = Response['data']
    })
   }

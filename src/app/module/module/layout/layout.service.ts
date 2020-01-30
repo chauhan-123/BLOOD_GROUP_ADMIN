@@ -11,7 +11,7 @@ export class LayoutService {
    public horizontalPosition: MatSnackBarHorizontalPosition = 'right';
    public verticalPosition: MatSnackBarVerticalPosition = 'top';
    public setAutoHide = true;
-   public autoHide = 2000;
+   public autoHide = 1000;
    public addExtraClass = false;
   constructor(public http:HttpClient , private snackBar: MatSnackBar ) { }
 
@@ -39,12 +39,12 @@ export class LayoutService {
     return this.http.get(`${this.Url}country_Group`);
   }
 
-  getStateList(){
-    return this.http.get(`${this.Url}state_Group`);
+  getStateList(info){
+    return this.http.post(`${this.Url}state_Group`, info);
   }
 
-  getDistrictDetails(){
-    return this.http.get(`${this.Url}district_Group`);
+  getDistrictDetails(info){
+    return this.http.post(`${this.Url}district_Group` , info);
   }
 
   getUserInformation(info){
